@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  QuestionsViewController.swift
 //  PersonalQuiz
 //
 //  Created by brubru on 15.08.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class QuestionsViewController: UIViewController {
 
     private let questions = Question.getQuestions()
     
