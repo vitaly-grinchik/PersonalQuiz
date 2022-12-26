@@ -96,18 +96,30 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fX-oS-WRz">
                                         <rect key="frame" x="121" y="0.0" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="nLs-WU-61d" eventType="touchUpInside" id="Ji5-Wq-dlT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKb-Jw-lBb">
                                         <rect key="frame" x="121" y="47" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="nLs-WU-61d" eventType="touchUpInside" id="MEd-Eh-nMX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKB-Jv-I7a">
                                         <rect key="frame" x="121" y="94" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="nLs-WU-61d" eventType="touchUpInside" id="6E4-r8-0vb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJM-9n-biv">
                                         <rect key="frame" x="121" y="141" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="nLs-WU-61d" eventType="touchUpInside" id="VWE-zF-B11"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -173,6 +185,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTC-Zz-HUV">
                                         <rect key="frame" x="0.0" y="188" width="288" height="30"/>
                                         <state key="normal" title="Ответить"/>
+                                        <connections>
+                                            <action selector="multipleAnswerButtonPressed" destination="nLs-WU-61d" eventType="touchUpInside" id="81h-Wd-1f2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -202,6 +217,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1f-yC-O5H">
                                         <rect key="frame" x="0.0" y="82.5" width="288" height="30"/>
                                         <state key="normal" title="Ответить"/>
+                                        <connections>
+                                            <action selector="rangedAnswerButtonPressed" destination="nLs-WU-61d" eventType="touchUpInside" id="UDD-oD-BIs"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -243,7 +261,27 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="qse-dS-Qn7" kind="show" id="lyi-4e-gVg"/>
+                        <outlet property="multipleStackView" destination="Mtt-m1-Or7" id="5pj-YT-Wi9"/>
+                        <outlet property="questionLabel" destination="zVM-4n-7eV" id="Jky-U6-Ywe"/>
+                        <outlet property="questionProgressView" destination="7Sg-sn-mjd" id="cfQ-n3-vdM"/>
+                        <outlet property="rangedSlider" destination="JaB-jV-jQZ" id="lhF-2P-ucf"/>
+                        <outlet property="rangedStackView" destination="pu7-eN-LEs" id="5Lu-8N-UXy"/>
+                        <outlet property="singleStackView" destination="fiD-u4-t4J" id="NRl-ES-Twi"/>
+                        <outletCollection property="singleButtons" destination="0fX-oS-WRz" collectionClass="NSMutableArray" id="ysh-WD-vGo"/>
+                        <outletCollection property="singleButtons" destination="cKb-Jw-lBb" collectionClass="NSMutableArray" id="BBh-dJ-3nT"/>
+                        <outletCollection property="singleButtons" destination="NKB-Jv-I7a" collectionClass="NSMutableArray" id="D2I-0O-aGw"/>
+                        <outletCollection property="singleButtons" destination="SJM-9n-biv" collectionClass="NSMutableArray" id="ou5-ZT-f6y"/>
+                        <outletCollection property="multipleLabels" destination="39P-gG-wdQ" collectionClass="NSMutableArray" id="DR7-du-oQ0"/>
+                        <outletCollection property="multipleLabels" destination="swA-WO-sww" collectionClass="NSMutableArray" id="ao7-ze-Imm"/>
+                        <outletCollection property="multipleLabels" destination="Tjg-7o-kTt" collectionClass="NSMutableArray" id="5CK-Tn-Hgv"/>
+                        <outletCollection property="multipleLabels" destination="xBP-qb-HRq" collectionClass="NSMutableArray" id="5ev-U6-CIY"/>
+                        <outletCollection property="multipleSwitches" destination="qBB-Pg-Ozk" collectionClass="NSMutableArray" id="tR1-Ig-X0y"/>
+                        <outletCollection property="multipleSwitches" destination="Rl1-uo-MuR" collectionClass="NSMutableArray" id="wfk-X4-r8i"/>
+                        <outletCollection property="multipleSwitches" destination="the-8R-38C" collectionClass="NSMutableArray" id="fOg-Fy-AKq"/>
+                        <outletCollection property="multipleSwitches" destination="d4K-I7-axy" collectionClass="NSMutableArray" id="pC2-ey-6qe"/>
+                        <outletCollection property="rangedLabels" destination="CIJ-LU-R2p" collectionClass="NSMutableArray" id="bOS-m6-DQT"/>
+                        <outletCollection property="rangedLabels" destination="0NE-SV-zSn" collectionClass="NSMutableArray" id="VLI-kY-zep"/>
+                        <segue destination="qse-dS-Qn7" kind="show" identifier="showResult" id="lyi-4e-gVg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Y7-7i-Lqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -312,7 +350,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ffD-ci-ylC"/>
+        <segue reference="lyi-4e-gVg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
