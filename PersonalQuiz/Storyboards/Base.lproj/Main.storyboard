@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Questions View Controller-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="QuestionsViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,13 +253,7 @@
                             <constraint firstItem="iq1-Uy-Hfo" firstAttribute="trailing" secondItem="7Sg-sn-mjd" secondAttribute="trailing" id="wlz-77-5I6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос №" id="WWe-Ld-cfT">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Cor-db-6ZQ">
-                            <connections>
-                                <segue destination="qse-dS-Qn7" kind="show" id="ffD-ci-ylC"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Вопрос №" id="WWe-Ld-cfT"/>
                     <connections>
                         <outlet property="multipleStackView" destination="Mtt-m1-Or7" id="5pj-YT-Wi9"/>
                         <outlet property="questionLabel" destination="zVM-4n-7eV" id="Jky-U6-Ywe"/>
@@ -346,12 +340,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYy-8E-434" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2711" y="112"/>
+            <point key="canvasLocation" x="2717" y="112"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="lyi-4e-gVg"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
