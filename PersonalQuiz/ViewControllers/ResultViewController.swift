@@ -39,10 +39,9 @@ extension ResultViewController {
     
     private func determineAnimal() -> Animal? {
         
-        // Prepare initial dictionary
         var animalTypeCount: [Animal: Int] = [:]
 
-        // Editing elements values in accordance with results
+        // Filling in empty dictionary
         answersChosen.forEach { answer in
             if let value = animalTypeCount[answer.type] {
                 animalTypeCount.updateValue(value + 1, forKey: answer.type)
@@ -51,7 +50,7 @@ extension ResultViewController {
             }
         }
         
-        // Get animal type corresponding to the first max value
+        // Get animal type corresponding to its max value
         let animal = animalTypeCount.max
         { $0.value < $1.value }?
         .key

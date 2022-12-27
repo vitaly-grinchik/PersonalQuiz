@@ -11,15 +11,15 @@ struct Question {
     let answers: [Answer]
 }
 
+struct Answer {
+    let title: String
+    let type: Animal
+}
+
 enum ResponseType {
     case single
     case multiple
     case ranged
-}
-
-struct Answer {
-    let title: String
-    let type: Animal
 }
 
 enum Animal: Character, CaseIterable {
@@ -35,7 +35,7 @@ enum Animal: Character, CaseIterable {
         case .cat:
             return "Вы себе на уме. Любите гулять сами по себе. Вы цените одиночество"
         case .rabbit:
-            return "Вам нарвится все мягкое. Вы здоровы и полны энерги"
+            return "Вам нарвится все мягкое. Вы здоровы и полны энергии"
         case .turtle:
             return "Ваша сила - в мудрости. Медленный и вдумчивый выигрывает на больших дистанциях"
         }
