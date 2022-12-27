@@ -324,8 +324,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="finalResultLabel" destination="Pje-G1-KWe" id="5sJ-qF-xEz"/>
                         <outlet property="resultDescriptionLabel" destination="nzx-GA-5fV" id="4Cm-vc-8ec"/>
+                        <outlet property="resultLabel" destination="Pje-G1-KWe" id="5sJ-qF-xEz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqe-Ta-iE0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

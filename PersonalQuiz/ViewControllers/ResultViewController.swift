@@ -9,7 +9,7 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
-    @IBOutlet var finalResultLabel: UILabel!
+    @IBOutlet var resultLabel: UILabel!
     @IBOutlet var resultDescriptionLabel: UILabel!
     
     var answersChosen: [Answer]!
@@ -22,7 +22,7 @@ class ResultViewController: UIViewController {
     
     private func updateUI() {
         if let animalEmoji = determineAnimal()?.rawValue {
-            finalResultLabel.text = "Вы - " + String(animalEmoji)
+            resultLabel.text = "Вы - " + String(animalEmoji)
         }
         let resultDescription = determineAnimal()?.definition
         
