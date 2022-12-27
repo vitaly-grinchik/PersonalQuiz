@@ -9,11 +9,24 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet var finalResultLabel: UILabel!
+    @IBOutlet var resultDescriptionLabel: UILabel!
+    
     var answersChosen: [Answer]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resultDescriptionLabel.numberOfLines = 4
+        updateUI()
+    }
+    
+    private func updateUI() {
+        if let animalEmoji = determineAnimal()?.rawValue {
+            finalResultLabel.text = "Вы - " + String(animalEmoji)
+        }
+        let resultDescription = determineAnimal()?.definition
         
+        resultDescriptionLabel.text = resultDescription ?? ""
     }
     
 //    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
@@ -27,14 +40,13 @@ extension ResultViewController {
         
         // Prepare initial dictionary
         var animalTypeCount: [AnimalType: Int] = [:]
-        for type in AnimalType.allCases {
-            animalTypeCount[type] = 0
-        }
-        
+
         // Editing elements values in accordance with results
         answersChosen.forEach { answer in
             if let value = animalTypeCount[answer.type] {
                 animalTypeCount.updateValue(value + 1, forKey: answer.type)
+            } else {
+                animalTypeCount[answer.type] = 1
             }
         }
         
