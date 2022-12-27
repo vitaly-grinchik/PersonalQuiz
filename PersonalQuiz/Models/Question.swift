@@ -19,10 +19,10 @@ enum ResponseType {
 
 struct Answer {
     let title: String
-    let type: AnimalType
+    let type: Animal
 }
 
-enum AnimalType: Character, CaseIterable {
+enum Animal: Character, CaseIterable {
     case dog = "🐶"
     case cat = "🐱"
     case rabbit = "🐰"

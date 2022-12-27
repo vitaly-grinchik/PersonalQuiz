@@ -36,10 +36,10 @@ class ResultViewController: UIViewController {
 
 extension ResultViewController {
     
-    private func determineAnimal() -> AnimalType? {
+    private func determineAnimal() -> Animal? {
         
         // Prepare initial dictionary
-        var animalTypeCount: [AnimalType: Int] = [:]
+        var animalTypeCount: [Animal: Int] = [:]
 
         // Editing elements values in accordance with results
         answersChosen.forEach { answer in
