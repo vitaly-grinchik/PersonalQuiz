@@ -30,7 +30,6 @@ final class QuestionsViewController: UIViewController {
         }
     }
     
-    
     // MARK: - Private Properties
     private let questions = Question.getQuestions()
     private var answerChosen: [Answer] = []
@@ -39,12 +38,16 @@ final class QuestionsViewController: UIViewController {
     private var currentAnswers: [Answer] {
         questions[questionIndex].answers
     }
-    
-    
 
+    // MARK: - Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let resultVC = segue.destination as? ResultViewController else { return }
+        resultVC.playerUnswers = answerChosen     
     }
 
     // MARK: - IBActions
@@ -90,10 +93,8 @@ extension QuestionsViewController {
         // set current question for question label
         questionLabel.text = currentQuestion.title
         
-        // set progress for questionProgressView
+        // set progress view
         let totalProgress = Float(questionIndex) / Float(questions.count)
-        
-        // set progress for questionProgressView
         questionProgressView.setProgress(totalProgress, animated: true)
         
         // set navigation title
