@@ -32,7 +32,7 @@ final class QuestionsViewController: UIViewController {
     
     // MARK: - Private Properties
     private let questions = Question.getQuestions()
-    private var answerChosen: [Answer] = []
+    private var answersChosen: [Answer] = []
     private var questionIndex = 0 // Index of current question
     
     private var currentAnswers: [Answer] {
@@ -47,7 +47,7 @@ final class QuestionsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let resultVC = segue.destination as? ResultViewController else { return }
-        resultVC.playerUnswers = answerChosen
+        resultVC.answersChosen = answersChosen
     }
 
     // MARK: - IBActions
@@ -55,7 +55,7 @@ final class QuestionsViewController: UIViewController {
         guard let currentIndex = singleButtons.firstIndex(of: sender) else { return }
         
         let currenetAnswer = currentAnswers[currentIndex]
-        answerChosen.append(currenetAnswer)
+        answersChosen.append(currenetAnswer)
         
         nextQuestion()
     }
@@ -63,7 +63,7 @@ final class QuestionsViewController: UIViewController {
     @IBAction func multipleAnswerButtonPressed() {
         for (multipleSwitch, answer) in zip(multipleSwitches, currentAnswers) {
             if multipleSwitch.isOn {
-                answerChosen.append(answer)
+                answersChosen.append(answer)
             }
         }
         
@@ -73,7 +73,7 @@ final class QuestionsViewController: UIViewController {
     @IBAction func rangedAnswerButtonPressed() {
         let index = lrintf(rangedSlider.value)
         
-        answerChosen.append(currentAnswers[index])
+        answersChosen.append(currentAnswers[index])
         
         nextQuestion()
     }

@@ -22,7 +22,7 @@ struct Answer {
     let type: AnimalType
 }
 
-enum AnimalType: Character {
+enum AnimalType: Character, CaseIterable {
     case dog = "🐶"
     case cat = "🐱"
     case rabbit = "🐰"
