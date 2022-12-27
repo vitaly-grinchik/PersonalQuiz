@@ -317,7 +317,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результат" id="QEn-B4-xS2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="24h-ow-deZ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="24h-ow-deZ">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="qse-dS-Qn7" id="PeZ-Ab-Cl4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="finalResultLabel" destination="Pje-G1-KWe" id="5sJ-qF-xEz"/>

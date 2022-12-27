@@ -27,11 +27,12 @@ class ResultViewController: UIViewController {
         let resultDescription = determineAnimal()?.definition
         
         resultDescriptionLabel.text = resultDescription ?? ""
+        navigationItem.hidesBackButton = true
     }
     
-//    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-//        navigationController?.dismiss(animated: true)
-//    }
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        navigationController?.dismiss(animated: true)
+    }
 }
 
 extension ResultViewController {
