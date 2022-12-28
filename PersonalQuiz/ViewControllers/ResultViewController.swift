@@ -41,13 +41,18 @@ extension ResultViewController {
         
         var animalTypeCount: [Animal: Int] = [:]
 
-        // Filling in empty dictionary
+        // Filling in empty dictionary - my variant
+//        answersChosen.forEach { answer in
+//            if let value = animalTypeCount[answer.animal] {
+//                animalTypeCount.updateValue(value + 1, forKey: answer.animal)
+//            } else {
+//                animalTypeCount[answer.animal] = 1
+//            }
+//        }
+        
+        // .... Alex variant
         answersChosen.forEach { answer in
-            if let value = animalTypeCount[answer.animal] {
-                animalTypeCount.updateValue(value + 1, forKey: answer.animal)
-            } else {
-                animalTypeCount[answer.animal] = 1
-            }
+            animalTypeCount[answer.animal, default: 0] += 1
         }
         
         // Get animal type corresponding to its max value
