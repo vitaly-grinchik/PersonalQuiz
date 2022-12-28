@@ -43,10 +43,10 @@ extension ResultViewController {
 
         // Filling in empty dictionary
         answersChosen.forEach { answer in
-            if let value = animalTypeCount[answer.type] {
-                animalTypeCount.updateValue(value + 1, forKey: answer.type)
+            if let value = animalTypeCount[answer.animal] {
+                animalTypeCount.updateValue(value + 1, forKey: answer.animal)
             } else {
-                animalTypeCount[answer.type] = 1
+                animalTypeCount[answer.animal] = 1
             }
         }
         

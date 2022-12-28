@@ -13,7 +13,7 @@ struct Question {
 
 struct Answer {
     let title: String
-    let type: Animal
+    let animal: Animal
 }
 
 enum ResponseType {
@@ -22,7 +22,7 @@ enum ResponseType {
     case ranged
 }
 
-enum Animal: Character, CaseIterable {
+enum Animal: Character {
     case dog = "🐶"
     case cat = "🐱"
     case rabbit = "🐰"
@@ -50,30 +50,30 @@ extension Question {
                 title: "Какую пищу предпочитаете?",
                 type: .single,
                 answers: [
-                    Answer(title: "Стейк", type: .dog),
-                    Answer(title: "Рыба", type: .cat),
-                    Answer(title: "Морковь", type: .rabbit),
-                    Answer(title: "Кукуруза", type: .turtle)
+                    Answer(title: "Стейк", animal: .dog),
+                    Answer(title: "Рыба", animal: .cat),
+                    Answer(title: "Морковь", animal: .rabbit),
+                    Answer(title: "Кукуруза", animal: .turtle)
                 ]
             ),
             Question(
                 title: "Что вам нравиться больше?",
                 type: .multiple,
                 answers: [
-                    Answer(title: "Плавать", type: .dog),
-                    Answer(title: "Спать", type: .cat),
-                    Answer(title: "Обниматься", type: .rabbit),
-                    Answer(title: "Есть", type: .turtle)
+                    Answer(title: "Плавать", animal: .dog),
+                    Answer(title: "Спать", animal: .cat),
+                    Answer(title: "Обниматься", animal: .rabbit),
+                    Answer(title: "Есть", animal: .turtle)
                 ]
             ),
             Question(
                 title: "Любите ли вы поездки на машине?",
                 type: .ranged,
                 answers: [
-                    Answer(title: "Ненавижу", type: .cat),
-                    Answer(title: "Нервничаю", type: .rabbit),
-                    Answer(title: "Не замечаю", type: .turtle),
-                    Answer(title: "Обожаю", type: .dog)
+                    Answer(title: "Ненавижу", animal: .cat),
+                    Answer(title: "Нервничаю", animal: .rabbit),
+                    Answer(title: "Не замечаю", animal: .turtle),
+                    Answer(title: "Обожаю", animal: .dog)
                 ]
             ),
         ]
